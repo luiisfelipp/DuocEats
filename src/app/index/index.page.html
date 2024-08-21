@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/icon/logo.png" alt="Logo Duoc" class="logo" />
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content">
+  <div class="grid-container">
+    <ion-card *ngFor="let item of items" (click)="navigateTo(item.link)">
+      <img src="{{ item.imgSrc }}" alt="{{ item.name }}" />
+      <ion-card-content>
+        <h2>{{ item.name }}</h2>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

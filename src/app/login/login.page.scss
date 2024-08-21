@@ -1,0 +1,47 @@
+.login-page {
+    --background: linear-gradient(45deg, #3B5998, #8b9dc3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+  
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+  
+    .input-item {
+      --background: rgba(255, 255, 255, 0.8);
+      --border-radius: 8px;
+      margin-bottom: 15px;
+    }
+  }
+  
+  .login-button, .register-button {
+    --background: white; /* Fondo blanco */
+    --color: #3B5998; /* Texto en azul */
+    --border-radius: 8px; /* Bordes redondeados */
+    margin-top: 20px;
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border: 2px solid #3B5998; /* Borde azul */
+    text-transform: uppercase; /* Texto en mayúsculas para consistencia */
+  }
+  
+  .login-button:hover, .register-button:hover {
+    --background: #3B5998; /* Fondo azul en hover */
+    --color: white; /* Texto blanco en hover */
+  }
+  
+  ion-menu {
+    --background: #ffffff; /* Fondo blanco para el menú */
+  }
+  
+  ion-menu-button {
+    color: #3B5998; /* Color del botón del menú */
+  }
+  
