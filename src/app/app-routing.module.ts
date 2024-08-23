@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./seguridad/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./seguridad/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'index',
@@ -21,11 +21,20 @@ const routes: Routes = [
   },
   {
     path: 'page1',
-    loadChildren: () => import('./page1/page1.module').then( m => m.Page1PageModule)
-  },  {
-    path: 'page2',
-    loadChildren: () => import('./page2/page2.module').then( m => m.Page2PageModule)
+    loadChildren: () => import('./tienda/page1/page1.module').then( m => m.Page1PageModule)
   },
+  {
+    path: 'page2',
+    loadChildren: () => import('./tienda/page2/page2.module').then( m => m.Page2PageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },  {
+    path: 'mi-perfil',
+    loadChildren: () => import('./seguridad/mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
+  },
+
 
   // Otras rutas
 ];
