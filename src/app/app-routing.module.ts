@@ -29,10 +29,11 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
-  },  {
+    loadChildren: () => import('./usuarios/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
     path: 'mi-perfil',
-    loadChildren: () => import('./seguridad/mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
+    loadChildren: () => import('./usuarios/mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
   },
 
 
