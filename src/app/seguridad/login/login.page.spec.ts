@@ -20,6 +20,6 @@ describe('LoginPage', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); //esto es un comentario
   });
 });
