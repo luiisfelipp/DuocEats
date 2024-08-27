@@ -10,7 +10,30 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">admin</ion-title> //Agregué otro comentario
+      <ion-title size="large">Administración</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content>
+    <ion-button (click)="loadUsers()">Listar Usuarios</ion-button>
+
+    <ion-card *ngIf="users.length > 0">
+      <ion-card-header>
+        <ion-card-title>Lista de Usuarios</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col><strong>Email</strong></ion-col>
+            <!-- Añadir otras columnas si es necesario -->
+          </ion-row>
+          <ion-row *ngFor="let user of users">
+            <ion-col>{{ user.email }}</ion-col>
+            <!-- Añadir otras columnas si es necesario -->
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-content>
