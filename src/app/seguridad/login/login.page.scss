@@ -1,5 +1,8 @@
+
+
+
 .login-page {
-    --background: linear-gradient(45deg, #3B5998, #8b9dc3);
+    --background: linear-gradient(45deg, #2c4375, #8b9dc3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,45 +11,54 @@
     .logo-container {
       text-align: center;
       margin-bottom: 20px;
+      margin-top: 30px;
   
       img {
-        width: 150px;
+        width: 190px;
         height: auto;
       }
     }
   
     .input-item {
-      --background: rgba(255, 255, 255, 0.8);
+      --color: black; 
+      --background: rgba(255, 255, 255, 0.702);
       --border-radius: 8px;
-      margin-bottom: 25px;
-      width: 90%;
-      margin: 20px auto;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      width: 80%;
+      margin: auto;
+      margin-block-end: 20px;
+
+
     }
   }
   
   .login-button, .register-button {
-    --background: white; /* Fondo blanco */
-    --color: #3B5998; /* Texto en azul */
-    --border-radius: 8px; /* Bordes redondeados */
-    margin-top: 20px;
-    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    border: 2px solid #3B5998; /* Borde azul */
-    text-transform: uppercase; /* Texto en mayúsculas para consistencia */
+    --border-radius: 10px;
+    --background: rgba(255, 255, 255, 0.859); 
+    --color: #2c4375; 
+    --border-radius: 10px; 
+    --margin-top: 40px;
+
+ 
+    text-transform: uppercase; 
     width: 70%;
     margin: 10px auto;
+    font-size: 15px;
+    font-weight: 300;
+
 
   }
   
   .login-button:hover, .register-button:hover {
-    --background: #3B5998; /* Fondo azul en hover */
-    --color: white; /* Texto blanco en hover */
+    --background: #2c4375; 
+    --color: white; 
   }
-  
-  ion-menu {
-    --background: #ffffff; /* Fondo blanco para el menú */
+
+  .header-toolbar {
+    --background: #2c4375;
+    --color: white; 
   }
+
   
-  ion-menu-button {
-    color: #3B5998; /* Color del botón del menú */
-  }
-  
+

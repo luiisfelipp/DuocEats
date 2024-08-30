@@ -1,3 +1,32 @@
+.menu-toolbar {
+  --background: #2c4375; /* Fondo rosado */
+  --color: white; /* Color del texto en el toolbar */
+}
+
+.menu-content {
+  --background: #f4f4f4; 
+}
+
+ion-item {
+  --background: white; 
+  --color: black;
+}
+
+ion-item:hover {
+  --background: #e4ecff; 
+}
+
+ion-icon {
+  --color: #2c4375; /* Color rosado para los íconos */
+}
+
+
+
+
+
+
+
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }

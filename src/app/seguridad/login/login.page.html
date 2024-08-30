@@ -1,38 +1,46 @@
 <ion-menu side="start" contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menú</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-menu>
-  
   <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Iniciar Sesión</ion-title>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content id="main-content" class="login-page">
-    <div class="logo-container">
-      <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/admin"/>
-    </div>
-  
-    <form>
-      <ion-item class="input-item">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-  
-      <ion-item class="input-item">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-  
-      <ion-button expand="block" class="login-button" routerLink="/index">Iniciar Sesión</ion-button>
-      <ion-button expand="block" fill="outline" class="register-button" routerLink="/register">¿Aún no tienes cuenta? Registrate</ion-button>
-    </form>
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/home">Inicio</ion-item>
+      <ion-item routerLink="/about">Acerca de</ion-item>
+      <ion-item routerLink="/contact">Contacto</ion-item>
+    </ion-list>
   </ion-content>
-  
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" class="login-page">
+  <div class="logo-container">
+    <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/admin" class="logo"/>
+  </div>
+
+  <form>
+    <ion-item class="input-item">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" class="custom-input"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" class="custom-input"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="login-button" routerLink="/index">Iniciar Sesión</ion-button>
+    <ion-button expand="block" fill="outline" class="register-button" routerLink="/register">
+      ¿Aún no tienes cuenta? Regístrate
+    </ion-button>
+  </form>
+</ion-content>

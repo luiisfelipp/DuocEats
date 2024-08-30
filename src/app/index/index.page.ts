@@ -10,7 +10,7 @@ export class IndexPage {
   items = [
     { name: 'Paradiso', imgSrc: 'assets/icon/icon1.jpg', link: '/page1' },
     { name: 'MAXIK', imgSrc: 'assets/icon/maxik.jpeg', link: '/page2' },
-    { name: 'Casino', imgSrc: 'assets/icon/icon3.png', link: '/page3' },
+    { name: 'Marley Coffee', imgSrc: 'assets/icon/marley.jpg', link: '/page3' },
     { name: 'Pizzeria', imgSrc: 'assets/icon/icon4.jpg', link: '/page4' },
   ];
 

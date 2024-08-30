@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./tienda/page2/page2.module').then( m => m.Page2PageModule)
   },
   {
+    path: 'page3',
+    loadChildren: () => import('./tienda/page3/page3.module').then( m => m.Page3PageModule)
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./usuarios/admin/admin.module').then( m => m.AdminPageModule)
   },
