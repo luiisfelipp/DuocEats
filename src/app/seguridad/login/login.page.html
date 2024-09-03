@@ -28,15 +28,19 @@
   </div>
 
   <form>
+    <!-- Usuario -->
     <ion-item class="input-item">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" class="custom-input"></ion-input>
+      <ion-input labelPlacement="stacked" label="Usuario" placeholder="Usuario">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+      </ion-input>
     </ion-item>
-
+    <!-- contraseña -->
     <ion-item class="input-item">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" class="custom-input"></ion-input>
+      <ion-input labelPlacement="stacked" label="Contraseña" type="password" placeholder="Ingresa tu contraseña">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      </ion-input>
     </ion-item>
+    <a routerLink="/recupera-clave" class="forgot-password-text">¿Olvidaste la contraseña?</a>
 
     <ion-button expand="block" class="login-button" routerLink="/index">Iniciar Sesión</ion-button>
     <ion-button expand="block" fill="outline" class="register-button" routerLink="/register">

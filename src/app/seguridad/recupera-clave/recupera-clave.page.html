@@ -1,0 +1,32 @@
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Recuperar contraseña</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" class="login-page">
+  <div class="logo-container">
+    <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/index" />
+  </div>
+
+  <form>
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="Correo Electrónico" placeholder="tu.correo@gmail.com">
+        <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="submit-button">Enviar</ion-button>
+  </form>
+</ion-content>

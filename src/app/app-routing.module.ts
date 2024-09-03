@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'mi-perfil',
     loadChildren: () => import('./usuarios/mi-perfil/mi-perfil.module').then( m => m.MiPerfilPageModule)
   },
+  {
+    path: 'recupera-clave',
+    loadChildren: () => import('./seguridad/recupera-clave/recupera-clave.module').then( m => m.RecuperaClavePageModule)
+  },
 
 
   // Otras rutas
