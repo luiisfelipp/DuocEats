@@ -31,3 +31,13 @@
     --color: white;
   }
   
+  .original-price {
+    text-decoration: line-through;
+    color: gray;
+    margin-right: 8px;
+  }
+  
+  .sale-price {
+    color: red;
+    font-weight: bold;
+  }
