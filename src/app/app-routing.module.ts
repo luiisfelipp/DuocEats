@@ -44,8 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./seguridad/recupera-clave/recupera-clave.module').then( m => m.RecuperaClavePageModule)
   },
 
-
-  // Otras rutas
+  {
+    path: 'page4',
+    loadChildren: () => import('./tienda/page4/page4.module').then( m => m.Page4PageModule)
+  },
 ];
 
 @NgModule({

@@ -10,7 +10,12 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- Imagen Banner Centrada Arriba -->
 <ion-content id="main-content">
+  <div class="banner-container">
+    <img src="assets/icon/banner.jpg" alt="Banner" class="banner-image" (click)="navigateToPage4()" />
+  </div>
+
   <div class="grid-container">
     <ion-card *ngFor="let item of items" (click)="navigateTo(item.link)">
       <img src="{{ item.imgSrc }}" alt="{{ item.name }}" />
@@ -19,6 +24,4 @@
       </ion-card-content>
     </ion-card>
   </div>
-
-
 </ion-content>

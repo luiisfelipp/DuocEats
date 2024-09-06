@@ -3,48 +3,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="/index"></ion-back-button>
-        </ion-buttons>
-
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/index"></ion-back-button>
+    </ion-buttons>
     <ion-title>Paradiso</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-item-divider>
-    <h1>Promociones</h1>
-  </ion-item-divider>
-  <div class="product-list">
-    <ion-card *ngFor="let product of products.slice(0, 4)">
-      <img [src]="product.image" alt="{{ product.name }}" />
-      <ion-card-header>
-        <ion-card-title>{{ product.name }}</ion-card-title>
-        <!-- Mostrar el precio original tachado y el precio en oferta si existe -->
-        <ion-card-subtitle>
-          <ng-container *ngIf="product.salePrice">
-            <span class="original-price">${{ product.price }}</span>
-            <span class="sale-price">${{ product.salePrice }}</span>
-          </ng-container>
-          <ng-container *ngIf="!product.salePrice">
-            ${{ product.price }}
-          </ng-container>
-        </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button expand="full" (click)="addToCart(product)">Agregar al Carrito</ion-button>
-      </ion-card-content>
-    </ion-card>
-  </div>
-
-
   <ion-item-divider>
     <h1>Masas Dulces</h1>
   </ion-item-divider>
   <div class="product-list">
-    <ion-card *ngFor="let product of products.slice(4)">
+    <!-- Iterate through the products and display each one -->
+    <ion-card *ngFor="let product of products">
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -55,7 +27,6 @@
       </ion-card-content>
     </ion-card>
   </div>
-
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="viewCart()">

@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 })
 export class Page3Page {
   products = [
-    { name: 'Café 14Oz + 2 Sandwich Vegetariano', price: 4.399, image: 'assets/icon/cafepancito.jpg' },
-    { name: 'Café 14Oz + 2 Medialunas Tradicional', price: 4.999, image: 'assets/icon/cafemedialuna.jpg' },
     { name: 'Cafe 14z', price: 1.299, image: 'assets/icon/cafe.jpg' },
     { name: 'Rocksteady 12Oz', price: 2.899, image: 'assets/icon/cafeespuma.webp' },
     { name: 'Café premium', price: 5.999, image: 'assets/icon/cafepremium.webp' }
