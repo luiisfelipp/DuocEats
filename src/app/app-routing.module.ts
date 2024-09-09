@@ -64,6 +64,10 @@ const routes: Routes = [
     path: 'listar',
     loadChildren: () => import('./admin-crud-products/listar/listar.module').then( m => m.ListarPageModule)
   },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
 ];
 
 @NgModule({

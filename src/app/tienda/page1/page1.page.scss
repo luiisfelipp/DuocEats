@@ -41,3 +41,23 @@
     color: red;
     font-weight: bold;
   }
+
+  .cart-dropdown {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+  }
+  
+  .cart-dropdown ion-card {
+    --box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-list {
+    margin: 0 10px;
+  }
+  
+
+  
