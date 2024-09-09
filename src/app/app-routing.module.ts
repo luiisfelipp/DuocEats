@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./tienda/page3/page3.module').then( m => m.Page3PageModule)
   },
   {
+    path: 'page4',
+    loadChildren: () => import('./tienda/page4/page4.module').then( m => m.Page4PageModule)
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./usuarios/admin/admin.module').then( m => m.AdminPageModule)
   },
@@ -42,32 +46,7 @@ const routes: Routes = [
   {
     path: 'recupera-clave',
     loadChildren: () => import('./seguridad/recupera-clave/recupera-clave.module').then( m => m.RecuperaClavePageModule)
-  },
-
-  {
-    path: 'page4',
-    loadChildren: () => import('./tienda/page4/page4.module').then( m => m.Page4PageModule)
-  },
-  {
-    path: 'crear',
-    loadChildren: () => import('./admin-crud-products/crear/crear.module').then( m => m.CrearPageModule)
-  },
-  {
-    path: 'modificar',
-    loadChildren: () => import('./admin-crud-products/modificar/modificar.module').then( m => m.ModificarPageModule)
-  },
-  {
-    path: 'eliminar',
-    loadChildren: () => import('./admin-crud-products/eliminar/eliminar.module').then( m => m.EliminarPageModule)
-  },
-  {
-    path: 'listar',
-    loadChildren: () => import('./admin-crud-products/listar/listar.module').then( m => m.ListarPageModule)
-  },
-  {
-    path: 'carrito',
-    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
-  },
+  }
 ];
 
 @NgModule({
