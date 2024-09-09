@@ -1,0 +1,71 @@
+.login-page {
+    --background: linear-gradient(45deg, #2c4375, #8b9dc3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .logo-container {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 30px;
+
+        img {
+            width: 190px;
+            height: auto;
+        }
+    }
+
+    .input-item {
+        --color: black;
+        --background: rgba(255, 255, 255, 0.702);
+        --border-radius: 8px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        width: 80%;
+        margin: auto;
+        margin-block-end: 20px;
+
+
+    }
+}
+
+.header-toolbar {
+    --background: #2c4375;
+    --color: white;
+}
+
+.submit-button {
+    --background: rgb(255, 255, 255);
+    /* Fondo blanco */
+    --color: #3B5998;
+    /* Texto en azul */
+    --border-radius: 8px;
+    /* Bordes redondeados */
+    margin-top: 20px;
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+    border: 2px solid #3B5998;
+    /* Borde azul */
+    text-transform: uppercase;
+    /* Texto en mayúsculas para consistencia */
+    width: 56%;
+    margin: 10px auto;
+}
+
+.file-upload {
+    --background: #3B5998;
+    --color: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    width: 56%;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+}

@@ -11,11 +11,7 @@ export class IndexPage {
     { name: 'Paradiso', imgSrc: 'assets/icon/icon1.jpg', link: '/page1' },
     { name: 'MAXIK', imgSrc: 'assets/icon/maxik.jpeg', link: '/page2' },
     { name: 'Marley Coffee', imgSrc: 'assets/icon/marley.jpg', link: '/page3' },
-<<<<<<< HEAD
-    { name: 'Promociones', imgSrc: 'assets/icon/banner.jpg', link: '/page4' },
-=======
 
->>>>>>> 06afcb5 (Primer commit)
   ];
 
   constructor(private router: Router) {}

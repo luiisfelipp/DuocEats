@@ -11,18 +11,11 @@
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
-=======
   <!-- Sección Cafés -->
->>>>>>> 06afcb5 (Primer commit)
   <ion-item-divider>
     <h1>Cafés</h1>
   </ion-item-divider>
   <div class="product-list">
-<<<<<<< HEAD
-    <!-- Iterate over all products -->
-    <ion-card *ngFor="let product of products">
-=======
     <!-- Itera sobre todos los productos -->
     <ion-card *ngFor="let product of products.slice(0, 3)">
       <img [src]="product.image" alt="{{ product.name }}" />
@@ -43,7 +36,6 @@
   <div class="product-list">
     <!-- Itera desde el cuarto producto hacia abajo -->
     <ion-card *ngFor="let product of products.slice(3)">
->>>>>>> 06afcb5 (Primer commit)
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -60,8 +52,4 @@
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-<<<<<<< HEAD
 </ion-content>
-=======
-</ion-content>
->>>>>>> 06afcb5 (Primer commit)

@@ -1,0 +1,65 @@
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Crear</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Crear CRUD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" class="login-page">
+  <div class="logo-container">
+    <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/index" />
+  </div>
+
+  <form>
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="ID del producto" placeholder="1">
+        <ion-icon slot="start" name="id-card-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="Nombre del producto" placeholder="Nombre">
+        <ion-icon slot="start" name="menu-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="precio" placeholder="$3.590">
+        <ion-icon slot="start" name="cash-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="Cantidad" placeholder="100">
+        <ion-icon slot="start" name="stats-chart-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-input labelPlacement="stacked" label="Descripcion" placeholder="producto traido de china">
+        <ion-icon slot="start" name="reorder-four-outline" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+
+    <ion-button expand="block" class="file-upload">
+      <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+      Seleccionar Imagen
+      <input type="file" accept="image/*" class="file-input" />
+    </ion-button>
+
+
+    <ion-button expand="block" class="submit-button">Agregar producto</ion-button>
+  </form>
+
+</ion-content>

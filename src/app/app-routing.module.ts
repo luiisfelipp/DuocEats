@@ -48,6 +48,22 @@ const routes: Routes = [
     path: 'page4',
     loadChildren: () => import('./tienda/page4/page4.module').then( m => m.Page4PageModule)
   },
+  {
+    path: 'crear',
+    loadChildren: () => import('./admin-crud-products/crear/crear.module').then( m => m.CrearPageModule)
+  },
+  {
+    path: 'modificar',
+    loadChildren: () => import('./admin-crud-products/modificar/modificar.module').then( m => m.ModificarPageModule)
+  },
+  {
+    path: 'eliminar',
+    loadChildren: () => import('./admin-crud-products/eliminar/eliminar.module').then( m => m.EliminarPageModule)
+  },
+  {
+    path: 'listar',
+    loadChildren: () => import('./admin-crud-products/listar/listar.module').then( m => m.ListarPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,36 @@
+.login-page {
+    --background: linear-gradient(45deg, #2c4375, #8b9dc3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .logo-container {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 30px;
+
+        img {
+            width: 190px;
+            height: auto;
+        }
+    }
+
+    .input-item {
+        --color: black;
+        --background: rgba(255, 255, 255, 0.702);
+        --border-radius: 8px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        width: 80%;
+        margin: auto;
+        margin-block-end: 20px;
+
+
+    }
+}
+
+.header-toolbar {
+    --background: #2c4375;
+    --color: white;
+}
