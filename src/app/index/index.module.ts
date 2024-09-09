@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 06afcb5 (Primer commit)
 import { IonicModule } from '@ionic/angular';
 
 import { IndexPageRoutingModule } from './index-routing.module';

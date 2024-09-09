@@ -11,12 +11,37 @@
 </ion-header>
 
 <ion-content>
+<<<<<<< HEAD
+=======
+  <!-- Sección Masas Dulces -->
+>>>>>>> 06afcb5 (Primer commit)
   <ion-item-divider>
     <h1>Masas Dulces</h1>
   </ion-item-divider>
   <div class="product-list">
+<<<<<<< HEAD
     <!-- Iterate through the products and display each one -->
     <ion-card *ngFor="let product of products">
+=======
+    <ion-card *ngFor="let product of products.slice(0, 4)">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+        <ion-card-subtitle>${{ product.price }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="full" (click)="addToCart(product)">Agregar al Carrito</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Sección Líquidos -->
+  <ion-item-divider>
+    <h1>Líquidos</h1>
+  </ion-item-divider>
+  <div class="product-list">
+    <ion-card *ngFor="let product of products.slice(4, 8)">
+>>>>>>> 06afcb5 (Primer commit)
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -33,4 +58,8 @@
       <ion-icon name="cart"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+<<<<<<< HEAD
 </ion-content>
+=======
+</ion-content>
+>>>>>>> 06afcb5 (Primer commit)
