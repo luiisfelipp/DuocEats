@@ -1,0 +1,44 @@
+{
+    "usuarios": [
+      {
+        "id": "macarena@harrys.cl",
+        "first_name": "Macarena",
+        "last_name": "Harrys",
+        "email": "macarena@harrys.cl",
+        "rol": "Cliente",
+        "clave": "123456"
+      },
+      {
+        "id": "luxo@harrys.cl",
+        "first_name": "Luis",
+        "last_name": "Muñoz",
+        "email": "luxo@harrys.cl",
+        "rol": "Administrador/a",
+        "clave": "123456"
+      },
+      {
+        "id": "isi@harrys.cl",
+        "first_name": "Isidora",
+        "last_name": "Armijo",
+        "email": "isi@harrys.cl",
+        "rol": "Administrador/a",
+        "clave": "123456"
+      },
+      {
+        "id": "kevin@harrys.cl",
+        "first_name": "Kevin",
+        "last_name": "Vázquez",
+        "email": "kevin@harrys.cl",
+        "rol": "Administrador/a",
+        "clave": "123456"
+      },
+      {
+        "id": "kris@harrys.cl",
+        "first_name": "Cristopher",
+        "last_name": "Ramirez",
+        "email": "kriss@harrys.cl",
+        "rol": "Administrador/a",
+        "clave": "123456"
+      }
+    ]
+  }

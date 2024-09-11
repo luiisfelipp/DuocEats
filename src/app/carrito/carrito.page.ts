@@ -15,6 +15,10 @@ export class CarritoPage {
     this.cart = JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
+  navigateTo(link: string) {
+    this.router.navigate([link]);
+  }
+
   calculateTotal() {
     return this.cart.reduce((total, item) => total + item.price, 0).toFixed(2);
   }

@@ -1,7 +1,36 @@
+.custom-footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  ion-button {
+    flex-grow: 1;  // Todos los botones ocupan el mismo espacio
+    margin: 0 3px;  
+    background-color: transparent;  
+    text-align: center;
+    padding: 20px 0;  
+
+    ion-icon {
+      margin: 5px 0;  
+      color: #333;  
+    }
+
+    &:hover {
+      background-color: #f9f9f9;  // Efecto hover con un cambio sutil de fondo
+    }
+  }
+}
+
+
+
+
 .logo {
   width: 100px;
   height: auto;
 }
+
+
+
 
 .grid-container {
   display: grid;
@@ -49,4 +78,35 @@ ion-title {
 .logo {
                   // Ajusta el tamaño del logo si es necesario
   margin-right: 50px;                // Espacio entre el logo y el texto
+}
+
+.banner-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+ion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+ion-tab-bar {
+  background-color: white;
+}
+
+ion-tab-button {
+  color: black;
 }

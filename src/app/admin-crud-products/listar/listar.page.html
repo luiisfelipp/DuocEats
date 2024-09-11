@@ -1,21 +1,34 @@
-<ion-menu side="start" contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Listar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-menu>
-
 <ion-header>
   <ion-toolbar class="header-toolbar">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/admin"></ion-back-button>
     </ion-buttons>
-    <ion-title>Listar Crud</ion-title>
+    <ion-title>Listar usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="main-content" class="login-page">
-  <div class="logo-container">
-    <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/index" />
-  </div>
+<ion-content id="main-content" class="list-page">
+  <ion-button expand="full" (click)="listarUsuarios()">
+    Listar Usuarios
+  </ion-button>
+
+  <ion-grid *ngIf="usuarios.length > 0">
+    <ion-row>
+      <ion-col size="3"><strong>Nombre</strong></ion-col>
+      <ion-col size="3"><strong>Apellido</strong></ion-col>
+      <ion-col size="3"><strong>E-mail</strong></ion-col>
+      <ion-col size="3"><strong>Rol</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let usuario of usuarios">
+      <ion-col size="3">{{ usuario.first_name }}</ion-col>
+      <ion-col size="3">{{ usuario.last_name }}</ion-col>
+      <ion-col size="3">{{ usuario.email }}</ion-col>
+      <ion-col size="3">{{ usuario.rol }} </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-text *ngIf="usuarios.length === 0">
+    <p>Presiona el botón para cargar la lista de usuarios.</p>
+  </ion-text>
+</ion-content>

@@ -25,6 +25,10 @@ export class Page3Page {
     this.loadCart();
   }
 
+  navigateTo(link: string) {
+    this.router.navigate([link]);
+  }
+
   toggleSearch() {
     this.isSearchVisible = !this.isSearchVisible;
   }

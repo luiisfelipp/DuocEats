@@ -25,6 +25,10 @@ export class Page4Page {
     this.loadCart();
   }
 
+  navigateTo(link: string) {
+    this.router.navigate([link]);
+  }
+
   addToCart(product: any) {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     cart.push(product);

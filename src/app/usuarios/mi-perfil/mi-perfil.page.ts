@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mi-perfil',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiPerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  navigateTo(link: string) {
+    this.router.navigate([link]);
+  }
 
   ngOnInit() {
   }

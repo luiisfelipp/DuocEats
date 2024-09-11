@@ -19,6 +19,10 @@ export class Page2Page {
 
   constructor(private router: Router) {}
 
+  navigateTo(link: string) {
+    this.router.navigate([link]);
+  }
+  
   toggleSearch() {
     this.isSearchVisible = !this.isSearchVisible;
   }

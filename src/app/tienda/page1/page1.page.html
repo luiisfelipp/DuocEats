@@ -2,26 +2,48 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="start">
       <ion-back-button defaultHref="/index"></ion-back-button>
     </ion-buttons>
-    <ion-title>Paradiso</ion-title>
+
+
+    <!-- Search Button -->
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
+  <!-- Search Form Wrapper -->
+  <div class="search-form-wrapper" *ngIf="isSearchVisible">
+    <ion-toolbar>
+      <ion-input type="search" placeholder="Buscar" [(ngModel)]="searchQuery"></ion-input>
+      <ion-button (click)="performSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toggleSearch()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </div>
 </ion-header>
 
-<ion-content>
-  <!-- Sección Masas Dulces -->
+<!-- Imagen Banner -->
+<ion-content id="main-content">
+  <div class="banner-container">
+    <img src="assets/icon/banner3.png" alt="Bannerparadiso" class="banner-image"/>
+  </div>
+
+  <!-- Sección Cafés -->
   <ion-item-divider>
-    <h1>Masas Dulces</h1>
+    <h1>Cafés</h1>
   </ion-item-divider>
   <div class="product-list">
-    <!-- Iterate through the products and display each one -->
-    <ion-card *ngFor="let product of products">
+    <ion-card *ngFor="let product of products.slice(0, 3)">
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
-        <ion-card-subtitle>${{ product.price }}</ion-card-subtitle>
+        <ion-card-subtitle>{{ product.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <ion-button expand="full" (click)="addToCart(product)">Agregar al Carrito</ion-button>
@@ -29,9 +51,80 @@
     </ion-card>
   </div>
 
+  <!-- Sección Masas Dulces -->
+  <ion-item-divider>
+    <h1>Masas Dulces</h1>
+  </ion-item-divider>
+  <div class="product-list">
+    <ion-card *ngFor="let product of products.slice(3)">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <ion-card-header>
+        <ion-card-title>{{ product.name }}</ion-card-title>
+        <ion-card-subtitle>{{ product.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="full" (click)="addToCart(product)">Agregar al Carrito</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Botón flotante del carrito -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="viewCart()">
+    <ion-fab-button (click)="toggleCart()">
       <ion-icon name="cart"></ion-icon>
+      <ion-badge color="danger">{{ cart.length }}</ion-badge>
     </ion-fab-button>
   </ion-fab>
+
+  <!-- Carrito desplegable -->
+  <ion-card *ngIf="isCartVisible" class="cart-dropdown">
+    <ion-card-header>
+      <ion-card-title>Carrito de compras</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of cart">
+          <ion-thumbnail slot="start">
+            <img [src]="item.image" alt="{{ item.name }}">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ item.name }}</h2>
+            <p>Cantidad: 1</p>
+            <p>Precio: ${{ item.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</p>
+          </ion-label>
+          <ion-button fill="clear" (click)="removeFromCart(item)">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+      <ion-item-divider></ion-item-divider>
+      <ion-item>
+        <ion-label><strong>Total</strong></ion-label>
+        <ion-label class="ion-text-end"><strong>${{ calculateTotal().toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</strong></ion-label>
+      </ion-item>
+      <ion-button expand="block" (click)="clearCart()">Limpiar carrito</ion-button>
+      <ion-button expand="block" (click)="viewCart()">Ver carrito completo</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+
+
+<!-- Barrita-->
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons class="custom-footer-buttons">
+      <ion-button (click)="navigateTo('/index')">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="navigateTo('/carrito')">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="navigateTo('/mi-perfil')">
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,96 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/index"></ion-back-button>
     </ion-buttons>
     <ion-title>Panel de Administrador</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Administración</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="admin-panel">
+  <div class="welcome-message">
+    <h1>Bienvenido, Administrador</h1>
+  </div>
 
-  <!-- Sección de Usuarios -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Usuarios</ion-card-title>
-      <ion-button (click)="loadUsers()">Listar Usuarios</ion-button>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col><strong>Email</strong></ion-col>
-          <ion-col><strong>Acciones</strong></ion-col>
-        </ion-row>
-        <ion-row *ngFor="let user of users">
-          <ion-col>{{ user.email }}</ion-col>
-          <ion-col>
-            <ion-button (click)="editUser(user)">Modificar</ion-button>
-            <ion-button color="danger" (click)="deleteUser(user)">Eliminar</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Sección de Productos -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Productos</ion-card-title>
-      <ion-button (click)="loadProducts()">Listar Productos</ion-button>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col><strong>Nombre</strong></ion-col>
-          <ion-col><strong>Precio</strong></ion-col>
-          <ion-col><strong>Acciones</strong></ion-col>
-        </ion-row>
-        <ion-row *ngFor="let product of products">
-          <ion-col>{{ product.name }}</ion-col>
-          <ion-col>${{ product.price }}</ion-col>
-          <ion-col>
-            <ion-button (click)="editProduct(product)">Modificar</ion-button>
-            <ion-button color="danger" (click)="deleteProduct(product)">Eliminar</ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  
-  <!-- Sección para agregar productos -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Agregar Producto</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input [(ngModel)]="newProduct.name"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Precio</ion-label>
-        <ion-input [(ngModel)]="newProduct.price" type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Imagen URL</ion-label>
-        <ion-input [(ngModel)]="newProduct.image"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Página</ion-label>
-        <ion-input [(ngModel)]="newProduct.page"></ion-input>
-      </ion-item>
-      <ion-button expand="full" (click)="addProduct()">Agregar Producto</ion-button>
-    </ion-card-content>
-  </ion-card>
-  
-
+  <ion-button expand="block" class="admin-button" routerLink="/crear">Agregar productos</ion-button>
+  <ion-button expand="block" class="admin-button" routerLink="/modificar">Modificar productos</ion-button>
+  <ion-button expand="block" class="admin-button" routerLink="/eliminar">Eliminar productos</ion-button>
+  <ion-button expand="block" class="admin-button" routerLink="/listar">Listar usuarios</ion-button>
 </ion-content>

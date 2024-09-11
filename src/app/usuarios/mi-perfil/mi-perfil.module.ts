@@ -18,3 +18,4 @@ import { MiPerfilPage } from './mi-perfil.page';
   declarations: [MiPerfilPage]
 })
 export class MiPerfilPageModule {}
+
