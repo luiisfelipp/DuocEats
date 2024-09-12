@@ -1,12 +1,14 @@
+/* Menu toolbar */
 .menu-toolbar {
-  --background: #2c4375; /* Fondo rosado */
+  --background: #2c4375; /* Fondo azul oscuro */
   --color: white; /* Color del texto en el toolbar */
 }
 
+/* Estructura del contenido del menú */
 .menu-content {
   display: flex;
   flex-direction: column;
-  height: 100%;  /* Ocupa toda la altura de la pantalla */
+  height: 100%; /* Ocupa toda la altura de la pantalla */
 }
 
 .menu-list {
@@ -15,27 +17,28 @@
   flex-grow: 1; /* Hace que el contenido de la lista crezca verticalmente */
 }
 
+/* Estilos para los items del menú */
 ion-item {
   --background: white;
   --color: black;
 }
 
-/* Empuja el último ítem al final de la lista */
+/* Empuja el último ítem (por ejemplo, para un botón de administrador) al final de la lista */
 .admin-item {
-  padding-top:200%; /* Empuja el ítem hacia abajo */
+  padding-top: 200%; /* Empuja el ítem hacia abajo */
 }
 
-
+/* Estilos cuando se hace hover sobre los items */
 ion-item:hover {
-  --background: #e4ecff; 
+  --background: #e4ecff; /* Cambio de fondo al hacer hover */
 }
 
+/* Color para los íconos dentro del menú */
 ion-icon {
-  --color: #2c4375; /* Color rosado para los íconos */
+  --color: #2c4375; /* Color azul oscuro para los íconos */
 }
 
-
-
+/* Fondo del menú en diferentes plataformas */
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
@@ -51,6 +54,7 @@ ion-menu.md ion-list {
   padding: 20px 0;
 }
 
+/* Espaciado adicional para las notas y encabezados de la lista en plataformas Material Design */
 ion-menu.md ion-note {
   margin-bottom: 30px;
 }
@@ -67,17 +71,13 @@ ion-menu.md ion-list#inbox-list {
 ion-menu.md ion-list#inbox-list ion-list-header {
   font-size: 22px;
   font-weight: 600;
-
   min-height: 20px;
 }
 
 ion-menu.md ion-list#labels-list ion-list-header {
   font-size: 16px;
-
   margin-bottom: 18px;
-
   color: #757575;
-
   min-height: 26px;
 }
 
@@ -103,6 +103,7 @@ ion-menu.md ion-item ion-label {
   font-weight: 500;
 }
 
+/* Estilos para iOS */
 ion-menu.ios ion-content {
   --padding-bottom: 20px;
 }
@@ -145,38 +146,47 @@ ion-menu.ios ion-note {
   margin-bottom: 8px;
 }
 
+/* Estilos generales para notas en cualquier plataforma */
 ion-note {
   display: inline-block;
   font-size: 16px;
-
   color: var(--ion-color-medium-shade);
 }
 
+/* Estilo cuando un ítem del menú está seleccionado */
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
 
-//FOOTER
+/* Footer personalizado */
 .custom-footer-buttons {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
+  background-color: #f0f0f0; /* Fondo claro para el footer */
+  
   ion-button {
-    flex-grow: 1;  // Todos los botones ocupan el mismo espacio
+    flex-grow: 1;  /* Todos los botones ocupan el mismo espacio */
     margin: 0 3px;  
     background-color: transparent;  
     text-align: center;
     padding: 20px 0;  
-
+    
     ion-icon {
       margin: 5px 0;  
-      color: #333;  
+      color: #333;  /* Color oscuro para los íconos */
     }
 
     &:hover {
-      background-color: #f9f9f9;  // Efecto hover con un cambio sutil de fondo
+      background-color: #e4e4e4;  /* Cambio de fondo al hacer hover */
     }
   }
 }
 
+/* Estilo para asegurar que el footer siempre esté fijo en la parte inferior */
+ion-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+}

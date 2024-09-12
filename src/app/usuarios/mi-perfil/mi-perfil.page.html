@@ -11,19 +11,26 @@
   <ion-card class="card">
     <img alt="mi-perfil-icon" src="assets/icon/perfil.png" />
     <ion-card-content>
-    <ion-card-header>
-      <ion-card-title>Fulanito Perez</ion-card-title>
-      <ion-card-subtitle>Creado el 23-08-2024</ion-card-subtitle>
-    </ion-card-header>
-  
-    
-      
+      <ion-card-header>
+        <ion-card-title>Fulanito Perez</ion-card-title>
+        <ion-card-subtitle>Creado el 23-08-2024</ion-card-subtitle>
+      </ion-card-header>
     </ion-card-content>
   </ion-card>
+
+  <!-- Botón para ir a la página de Admin -->
+  <ion-button expand="block" color="tertiary" (click)="navigateToAdmin()">
+    Ir a Admin
+  </ion-button>
+
+  <!-- Botón de cerrar sesión en rojo -->
+  <ion-button expand="block" color="danger" (click)="cerrarSesion()">
+    Cerrar Sesión
+  </ion-button>
+
 </ion-content>
 
-
-<!-- Barrita-->
+<!-- Barrita -->
 <ion-footer>
   <ion-toolbar>
     <ion-buttons class="custom-footer-buttons">
