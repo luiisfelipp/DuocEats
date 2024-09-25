@@ -20,6 +20,11 @@ export class MiPerfilPage implements OnInit {
     this.router.navigate(['/admin']);
   }
 
+  // Función para ir a la página de editar perfil
+  navigateToEditarPerfil() {
+    this.router.navigate(['/editar-perfil']);
+  }
+
   // Función para cerrar sesión
   cerrarSesion() {
     // Aquí pones la lógica para cerrar sesión, como limpiar tokens, remover datos de sesión, etc.
@@ -31,5 +36,4 @@ export class MiPerfilPage implements OnInit {
 
   ngOnInit() {
   }
-
 }

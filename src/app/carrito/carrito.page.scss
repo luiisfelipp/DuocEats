@@ -20,4 +20,26 @@
       }
     }
   }
+
+  .btn-pago-efectivo {
+    background-color: white;  // Fondo blanco
+    color: black;  // Texto negro
+    border: 1px solid black;  // Borde negro
+  
+    &:hover {
+      background-color: #f0f0f0;  // Efecto hover con fondo gris claro
+    }
+  }
+
+
+  .btn-pago-efectivo {
+    --background: white;
+    --color: black;
+    --border-color: black;
+    border: 1px solid var(--border-color);
+  
+    &:hover {
+      background-color: #f0f0f0;  // Efecto hover
+    }
+  }
   

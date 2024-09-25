@@ -7,16 +7,47 @@ import { Router } from '@angular/router';
   styleUrls: ['./carrito.page.scss'],
 })
 export class CarritoPage {
-  cart: any[] = []; // Este carrito debe ser rellenado con los productos del carrito
+  cart: any[] = []; // Inicializa el carrito con productos
+  customerName: string = ''; // Nombre del cliente
+  customerEmail: string = ''; // Email del cliente
 
   constructor(private router: Router) {
-    
-    // Inicializa el carrito, aquí deberías cargar los productos del carrito
+    // Carga los productos del carrito desde el localStorage
     this.cart = JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
   navigateTo(link: string) {
     this.router.navigate([link]);
+  }
+
+  addCard() {
+    // Lógica para agregar tarjeta (puedes abrir un modal aquí)
+    console.log('Agregar tarjeta lógica aquí');
+  }
+
+  continuePurchase() {
+    if (!this.customerName || !this.customerEmail) {
+      alert('Por favor, completa la información del cliente.');
+      return;
+    }
+
+    const pedido = {
+      customerName: this.customerName,
+      customerEmail: this.customerEmail,
+      items: this.cart,
+      total: this.calculateTotal()
+    };
+
+    localStorage.setItem('pedidos', JSON.stringify(pedido));
+
+    // Redirige a la página de pedidos
+    this.router.navigate(['/pedido']);
+  }
+
+  payCash() {
+    // Lógica para realizar el pago en efectivo
+    console.log('Pago en efectivo realizado');
+    this.continuePurchase(); // Continúa con la compra después del pago
   }
 
   calculateTotal() {

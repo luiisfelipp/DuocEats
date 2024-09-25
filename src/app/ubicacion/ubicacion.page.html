@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <div class="toolbar-container">
+      <img src="assets/icon/logo.png" alt="Logo Duoc" class="logo" />
+      <ion-title>¿En qué sede te encuentras?</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-container">
+  <div class="grid-container">
+
+    <ion-card *ngFor="let location of locations" (click)="selectLocation(location.name)">
+      <img [src]="location.imgSrc" [class.grayscale]="selectedLocation !== location.name && selectedLocation !== ''" alt="{{ location.name }}">
+      <ion-card-content>
+        <h2>{{ location.name }}</h2>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+ 
+  <ion-footer class="ion-no-border">
+    <ion-button expand="block" [disabled]="!selectedLocation" (click)="navigateToNextPage()">
+      Continuar
+    </ion-button>
+  </ion-footer>
+</ion-content>

@@ -18,6 +18,11 @@
     </ion-card-content>
   </ion-card>
 
+  <!-- Botón para editar el perfil -->
+  <ion-button expand="block" color="primary" (click)="navigateToEditarPerfil()">
+    Editar Perfil
+  </ion-button>
+
   <!-- Botón para ir a la página de Admin -->
   <ion-button expand="block" color="tertiary" (click)="navigateToAdmin()">
     Ir a Admin
@@ -29,22 +34,3 @@
   </ion-button>
 
 </ion-content>
-
-<!-- Barrita -->
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons class="custom-footer-buttons">
-      <ion-button (click)="navigateTo('/index')">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/carrito')">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/mi-perfil')">
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

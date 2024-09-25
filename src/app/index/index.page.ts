@@ -11,6 +11,7 @@ export class IndexPage {
     { name: 'Paradiso', imgSrc: 'assets/icon/icon1.jpg', link: '/page1' },
     { name: 'MAXIK', imgSrc: 'assets/icon/maxik.jpeg', link: '/page2' },
     { name: 'Marley Coffee', imgSrc: 'assets/icon/marley.jpg', link: '/page3' },
+    { name: 'Starbucks', imgSrc: 'assets/icon/starbucks.webp', link: '/page5' },
   ];
 
 

@@ -4,9 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', // Redirige a la página de login
+    redirectTo: 'splash', 
     pathMatch: 'full'
+    
   },
+  
+
   {
     path: 'login',
     loadChildren: () => import('./seguridad/login/login.module').then(m => m.LoginPageModule)
@@ -66,7 +69,27 @@ const routes: Routes = [
   {
     path: 'carrito',
     loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
-  },  
+  },   {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'ubicacion',
+    loadChildren: () => import('./ubicacion/ubicacion.module').then(m => m.UbicacionPageModule)
+  },
+  {
+    path: 'editar-perfil',
+    loadChildren: () => import('./usuarios//editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+  },
+  {
+  path: 'page5',
+  loadChildren: () => import('./tienda/page5/page5.module').then( m => m.Page5PageModule)
+  },
+  {
+    path: 'pedido',
+    loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
+  },
+ 
 
 
 ];

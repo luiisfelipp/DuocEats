@@ -7,8 +7,35 @@
       <ion-back-button defaultHref="/index"></ion-back-button>
     </ion-buttons>
     <ion-title>Promociones</ion-title>
+
+    <!-- Botones de búsqueda y carrito -->
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toggleCart()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger">{{ cart.length }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
+  
+  <!-- Search Form Wrapper -->
+  <div class="search-form-wrapper" *ngIf="isSearchVisible">
+    <ion-toolbar>
+      <ion-input type="search" placeholder="Buscar" [(ngModel)]="searchQuery"></ion-input>
+      <ion-button (click)="performSearch()">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toggleSearch()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </div>
 </ion-header>
+
+
 
 <ion-content>
   <!-- Banner Section -->
@@ -91,15 +118,9 @@
     </ion-card>
   </div>
 
-  <!-- Floating Cart Button -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="toggleCart()">
-      <ion-icon name="cart"></ion-icon>
-      <ion-badge color="danger">{{ cart.length }}</ion-badge>
-    </ion-fab-button>
-  </ion-fab>
 
-  <!-- Cart Dropdown -->
+
+  <!-- Carrito desplegable -->
   <ion-card *ngIf="isCartVisible" class="cart-dropdown">
     <ion-card-header>
       <ion-card-title>Carrito de compras</ion-card-title>
@@ -132,21 +153,4 @@
 </ion-content>
 
 
-<!-- Barrita-->
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons class="custom-footer-buttons">
-      <ion-button (click)="navigateTo('/index')">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
 
-      <ion-button (click)="navigateTo('/carrito')">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/mi-perfil')">
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

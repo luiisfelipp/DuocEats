@@ -14,10 +14,17 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         const currentRoute = event.urlAfterRedirects;
         // Oculta el footer en login y register
-        this.showFooter = !(currentRoute === '/login' || currentRoute === '/register');
+        // Oculta el footer en login, register y splash
+        this.showFooter = !(
+          currentRoute === '/login' ||
+          currentRoute === '/register' ||
+          currentRoute === '/splash' ||
+          currentRoute === '/ubicacion'
+        );
       }
     });
   }
+
 
   navigateTo(url: string) {
     this.router.navigate([url]);

@@ -5,16 +5,19 @@
       <ion-back-button defaultHref="/index"></ion-back-button>
     </ion-buttons>
 
-
-    <!-- Search Button -->
+    <!-- Botones de búsqueda y carrito -->
     <ion-buttons slot="end">
       <ion-button (click)="toggleSearch()">
         <ion-icon name="search"></ion-icon>
       </ion-button>
+      <ion-button (click)="toggleCart()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger">{{ cart.length }}</ion-badge>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
-  <!-- Search Form Wrapper -->
+  <!-- Barra de búsqueda -->
   <div class="search-form-wrapper" *ngIf="isSearchVisible">
     <ion-toolbar>
       <ion-input type="search" placeholder="Buscar" [(ngModel)]="searchQuery"></ion-input>
@@ -28,7 +31,7 @@
   </div>
 </ion-header>
 
-<!-- Imagen Banner -->
+<!-- Imagen del banner -->
 <ion-content id="main-content">
   <div class="banner-container">
     <img src="assets/icon/banner3.png" alt="Bannerparadiso" class="banner-image"/>
@@ -39,7 +42,7 @@
     <h1>Cafés</h1>
   </ion-item-divider>
   <div class="product-list">
-    <ion-card *ngFor="let product of products.slice(0, 3)">
+    <ion-card *ngFor="let product of filteredProducts('masas')">
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -51,12 +54,12 @@
     </ion-card>
   </div>
 
-  <!-- Sección Masas Dulces -->
+  <!-- Sección Masas Dulces (Usar la lista filtrada para mostrar resultados) -->
   <ion-item-divider>
     <h1>Masas Dulces</h1>
   </ion-item-divider>
   <div class="product-list">
-    <ion-card *ngFor="let product of products.slice(3)">
+    <ion-card *ngFor="let product of filteredProducts('liquidos')">
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -67,14 +70,6 @@
       </ion-card-content>
     </ion-card>
   </div>
-
-  <!-- Botón flotante del carrito -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="toggleCart()">
-      <ion-icon name="cart"></ion-icon>
-      <ion-badge color="danger">{{ cart.length }}</ion-badge>
-    </ion-fab-button>
-  </ion-fab>
 
   <!-- Carrito desplegable -->
   <ion-card *ngIf="isCartVisible" class="cart-dropdown">
@@ -106,25 +101,4 @@
       <ion-button expand="block" (click)="viewCart()">Ver carrito completo</ion-button>
     </ion-card-content>
   </ion-card>
-</ion-content>
 
-
-
-<!-- Barrita-->
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons class="custom-footer-buttons">
-      <ion-button (click)="navigateTo('/index')">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/carrito')">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/mi-perfil')">
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

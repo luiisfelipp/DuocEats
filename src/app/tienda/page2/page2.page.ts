@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 })
 export class Page2Page {
   products = [
-    { name: 'Maxi Dupla', price: 2999, image: 'assets/icon/maxik1.JPG' },
-    { name: 'Café + Brownie', price: 2999, image: 'assets/icon/maxik2.JPG' },
+    { name: 'Maxi Dupla', price: 2000, image: 'assets/icon/maxik1.JPG' },
+    { name: 'Café + Brownie', price: 2000, image: 'assets/icon/maxik2.JPG' },
   ];
 
   cart: any[] = [];
+  isCartVisible = false;
   isSearchVisible = false;
   searchQuery = '';
-  isCartVisible = false;
 
   constructor(private router: Router) {}
 
@@ -25,6 +25,15 @@ export class Page2Page {
   
   toggleSearch() {
     this.isSearchVisible = !this.isSearchVisible;
+  }
+
+  filteredProducts() {
+    if (!this.searchQuery) {
+      return this.products; // Si no hay búsqueda, devuelve todos los productos
+    }
+    return this.products.filter(product =>
+      product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
   }
 
   performSearch() {

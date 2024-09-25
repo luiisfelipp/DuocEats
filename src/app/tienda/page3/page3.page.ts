@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
 })
 export class Page3Page {
   products = [
-    { name: 'Cafe 14z', price: 1299, image: 'assets/icon/cafe.jpg' },
-    { name: 'Rocksteady 12Oz', price: 2899, image: 'assets/icon/cafeespuma.webp' },
-    { name: 'Café premium', price: 5999, image: 'assets/icon/cafepremium.webp' },
-    { name: 'Bretzel Chocolate', price: 1199, image: 'assets/icon/masamarley1.jpg' },
-    { name: 'Muffin de Arándanos', price: 1399, image: 'assets/icon/marleymasas2.webp' },
-    { name: 'Muffin de Chocolate', price: 1399, image: 'assets/icon/marleymasas3.jpg' },
+    { name: 'Cafe 14z', price: 1200, image: 'assets/icon/cafe.jpg' },
+    { name: 'Rocksteady 12Oz', price: 2800, image: 'assets/icon/cafeespuma.webp' },
+    { name: 'Café premium', price: 5900, image: 'assets/icon/cafepremium.webp' },
+    { name: 'Bretzel Chocolate', price: 1100, image: 'assets/icon/masamarley1.jpg' },
+    { name: 'Muffin de Arándanos', price: 1300, image: 'assets/icon/marleymasas2.webp' },
   ];
 
   cart: any[] = [];
@@ -36,6 +35,15 @@ export class Page3Page {
   performSearch() {
     console.log('Search query:', this.searchQuery);
     // Implementar búsqueda
+  }
+
+  filteredProducts() {
+    if (!this.searchQuery) {
+      return this.products; // Si no hay búsqueda, devuelve todos los productos
+    }
+    return this.products.filter(product =>
+      product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
   }
 
   addToCart(product: any) {

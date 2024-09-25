@@ -1,0 +1,56 @@
+ion-content {
+    --background: #f5f5f5; /* Fondo suave */
+}
+
+ion-card {
+    margin: 20px;
+    border-radius: 0px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgb(255, 255, 255); /* Sombra sutil */
+}
+
+ion-card-header {
+    text-align: center;
+    background-color: #3f8ad1; /* Color de fondo del encabezado */
+    color: rgb(23, 5, 5); /* Color del texto */
+    padding: 10px 0; /* Espaciado */
+    border-top-left-radius: 12px; /* Bordes redondeados en la parte superior */
+    border-top-right-radius: 12px; /* Bordes redondeados en la parte superior */
+}
+
+ion-card-title {
+    font-size: 1.4rem; /* Tamaño de fuente del título */
+    font-weight: bold; /* Negrita */
+}
+
+ion-item {
+    margin: 10px 0; /* Margen entre los elementos */
+    border-radius: 8px; /* Bordes redondeados para los ítems */
+    transition: background 0.2s; /* Transición suave al pasar el mouse */
+    position: relative; /* Necesario para la posición de los labels */
+}
+
+ion-item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Efecto hover */
+}
+
+ion-label {
+    color: gray; /* Color gris para los labels */
+    transition: all 0.2s ease; /* Transición suave para el movimiento */
+}
+
+ion-input:focus ~ ion-label,
+ion-input:not(:placeholder-shown) ~ ion-label {
+    transform: translateY(-20px) scale(0.8); /* Desplaza y reduce el tamaño del label */
+    color: var(--ion-color-primary); /* Cambia el color del label al enfocar */
+}
+
+ion-input {
+    --padding-top: 16px; /* Espacio superior para el input */
+    --padding-bottom: 6px; /* Espacio inferior para el input */
+}
+
+.guardar-btn {
+    margin-top: 20px; /* Espacio superior del botón */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+    --border-radius: 10px; /* Bordes redondeados para el botón */
+}

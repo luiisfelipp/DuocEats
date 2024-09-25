@@ -19,16 +19,15 @@
             <ion-card-title>Información Cliente</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <!-- Formulario de dirección de factura -->
             <ion-item>
               <ion-icon name="person" slot="start"></ion-icon>
               <ion-label position="floating">Nombre Completo</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
+              <ion-input [(ngModel)]="customerName" type="text" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-icon name="mail" slot="start"></ion-icon>
               <ion-label position="floating">Email</ion-label>
-              <ion-input type="email" placeholder=""></ion-input>
+              <ion-input [(ngModel)]="customerEmail" type="email" required></ion-input>
             </ion-item>
           </ion-card-content>
         </ion-card>
@@ -38,36 +37,18 @@
             <ion-card-title>Método de Pago</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <!-- Formulario de método de pago -->
-            <ion-item>
+            <ion-button expand="block" class="btn-pago-efectivo" (click)="addCard()">
               <ion-icon name="card" slot="start"></ion-icon>
-              <ion-label position="floating">Nombre en la Tarjeta</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="card" slot="start"></ion-icon>
-              <ion-label position="floating">Número de la Tarjeta</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="calendar" slot="start"></ion-icon>
-              <ion-label position="floating">Mes de Vencimiento</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="calendar" slot="start"></ion-icon>
-              <ion-label position="floating">Año de Vencimiento</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="lock-closed" slot="start"></ion-icon>
-              <ion-label position="floating">CVV</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
-            </ion-item>
+              Agregar Tarjeta
+            </ion-button>
+            <ion-button expand="block" class="btn-pago-efectivo" (click)="addCard()">
+              <ion-icon name="storefront" slot="start"></ion-icon> <!-- Ícono de tienda -->
+              Pagar en tienda
+            </ion-button>
           </ion-card-content>
         </ion-card>
 
-        <ion-button expand="block" color="primary">Continuar a la compra</ion-button>
+        <ion-button expand="block" color="primary" (click)="continuePurchase()">Continuar la compra</ion-button>
       </ion-col>
 
       <ion-col size="12" size-md="4">
@@ -100,7 +81,6 @@
               <ion-note slot="end" color="dark"><strong>${{ calculateTotal().toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</strong></ion-note>
             </ion-item>
             <ion-button expand="block" color="danger" (click)="clearCart()">Limpiar carrito</ion-button>
-            <ion-button expand="block" color="primary" (click)="viewCart()">Ver carrito completo</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -108,7 +88,6 @@
   </ion-grid>
 </ion-content>
 
-<!-- Barrita -->
 <ion-footer>
   <ion-toolbar>
     <ion-buttons class="custom-footer-buttons">
@@ -126,3 +105,4 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-footer>
+

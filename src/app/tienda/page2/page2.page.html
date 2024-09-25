@@ -10,10 +10,15 @@
     </ion-buttons>
     <ion-title>MAXIK</ion-title>
 
-    <!-- Search Button -->
+
+    <!-- Botones de búsqueda y carrito -->
     <ion-buttons slot="end">
       <ion-button (click)="toggleSearch()">
         <ion-icon name="search"></ion-icon>
+      </ion-button>
+      <ion-button (click)="toggleCart()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger">{{ cart.length }}</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -37,9 +42,9 @@
   <div class="banner-container">
     <img src="assets/icon/banner4.png" alt="Bannermaxik" class="banner-image"/>
   </div>
-<ion-content>
+  
   <div class="product-list">
-    <ion-card *ngFor="let product of products">
+    <ion-card *ngFor="let product of filteredProducts()">
       <img [src]="product.image" alt="{{ product.name }}" />
       <ion-card-header>
         <ion-card-title>{{ product.name }}</ion-card-title>
@@ -51,15 +56,9 @@
     </ion-card>
   </div>
 
-  <!-- Floating Cart Button -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="toggleCart()">
-      <ion-icon name="cart"></ion-icon>
-      <ion-badge color="danger">{{ cart.length }}</ion-badge>
-    </ion-fab-button>
-  </ion-fab>
 
-  <!-- Cart Dropdown -->
+
+  <!-- Carrito desplegable -->
   <ion-card *ngIf="isCartVisible" class="cart-dropdown">
     <ion-card-header>
       <ion-card-title>Carrito de compras</ion-card-title>
@@ -92,21 +91,4 @@
 </ion-content>
 
 
-<!-- Barrita-->
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons class="custom-footer-buttons">
-      <ion-button (click)="navigateTo('/index')">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
 
-      <ion-button (click)="navigateTo('/carrito')">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button (click)="navigateTo('/mi-perfil')">
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
