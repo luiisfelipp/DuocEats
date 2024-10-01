@@ -14,3 +14,4 @@ export class UsuarioService {
     return this.http.get<any[]>(this.apiUrl);
   }
 }
+

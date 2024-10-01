@@ -1,38 +1,32 @@
 .list-page {
-    --background: #f4f4f4;
-  
-    ion-button {
-      margin: 20px;
-    }
-  
-    ion-item {
-      --background: white;
-      --color: black;
-      border-bottom: 1px solid #ddd;
-    }
+  --background: #f4f4f4;
+
+  ion-button {
+    margin: 20px;
   }
-.list-page {
-    --background: #f4f4f4;
-  
-    ion-button {
-      margin: 20px;
-    }
-  
-    ion-grid {
-      margin: 20px;
-    }
-  
-    ion-row {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0%;
-    }
-  
-    ion-col {
-      text-align: start;
-    }
-  
-    ion-col strong {
-      color: #2c4375;
-    }
+
+  ion-grid {
+    margin: 20px;
   }
+
+  ion-row {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0%;
+  }
+
+  ion-col {
+    text-align: start;
+  }
+
+  ion-col strong {
+    color: #2c4375;
+  }
+
+  .actions-col {
+    text-align: end;
     
+    ion-button {
+      margin-left: 10px;
+    }
+  }
+}

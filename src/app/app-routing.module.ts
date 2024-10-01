@@ -69,10 +69,7 @@ const routes: Routes = [
   {
     path: 'carrito',
     loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
-  },   {
-    path: 'splash',
-    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
-  },
+  },   
   {
     path: 'ubicacion',
     loadChildren: () => import('./ubicacion/ubicacion.module').then(m => m.UbicacionPageModule)
@@ -89,7 +86,12 @@ const routes: Routes = [
     path: 'pedido',
     loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
   },
- 
+
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+
 
 
 ];

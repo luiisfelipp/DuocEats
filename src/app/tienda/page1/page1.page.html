@@ -32,14 +32,20 @@
 </ion-header>
 
 <!-- Imagen del banner -->
-<ion-content id="main-content">
+<!-- <ion-content id="main-content">
   <div class="banner-container">
     <img src="assets/icon/banner3.png" alt="Bannerparadiso" class="banner-image"/>
+  </div> -->
+<!-- Imagen Banner Centrada Arriba -->
+<ion-content id="main-content">
+  <div class="banner-container">
+    <img src="assets/icon/banner.jpg" alt="Banner" class="banner-image">
   </div>
+  
 
   <!-- Sección Cafés -->
   <ion-item-divider>
-    <h1>Cafés</h1>
+
   </ion-item-divider>
   <div class="product-list">
     <ion-card *ngFor="let product of filteredProducts('masas')">
@@ -56,7 +62,7 @@
 
   <!-- Sección Masas Dulces (Usar la lista filtrada para mostrar resultados) -->
   <ion-item-divider>
-    <h1>Masas Dulces</h1>
+
   </ion-item-divider>
   <div class="product-list">
     <ion-card *ngFor="let product of filteredProducts('liquidos')">

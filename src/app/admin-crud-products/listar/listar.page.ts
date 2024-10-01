@@ -20,4 +20,19 @@ export class ListarPage implements OnInit {
       this.usuarios = data;
     });
   }
+  agregarUsuario() {
+    console.log('Agregar usuario');
+  }
+
+  modificarUsuario(usuario: any) {
+    console.log('Modificar usuario:', usuario);
+  }
+
+  eliminarUsuario(usuario: any) {
+    console.log('Eliminar usuario:', usuario);
+    this.usuarios = this.usuarios.filter(u => u.id !== usuario.id);
+  }
 }
+
+
+

@@ -1,14 +1,26 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import  { HttpClient } from "@angular/common/http";
+
+type Producto = {
+  name: string, 
+  price: number,
+  image: string, 
+  category: string,
+  
+}
 
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.page.html',
   styleUrls: ['./page1.page.scss'],
 })
+
+
+
 export class Page1Page {
-  products = [
+  products : Producto[] = [
     { name: 'Cruzadito chocolate', price: 2100, image: 'assets/icon/masadulce1.jpg', category: 'masas' },
     { name: 'Donuts', price: 1200, image: 'assets/icon/masadulce2.jpg', category: 'masas' },
     { name: 'Cinnamon roll', price: 1700, image: 'assets/icon/masadulce3.webp', category: 'masas' },
@@ -26,13 +38,34 @@ export class Page1Page {
   filteredProductsMasasDulces = this.products.filter(p => p.category === 'masas');
   filteredProductsLiquidos = this.products.filter(p => p.category === 'liquidos');
 
-  constructor(private router: Router) {
-    // Cargar carrito desde localStorage
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      this.cart = JSON.parse(storedCart);
-    }
+  
+constructor(private router: Router, private http: HttpClient) {
+  this.http
+      .get<Producto[]>("http://localhost:8000/productos")
+      .subscribe(response => {
+        console.log(response);
+        this.products = response;
+      }, error => {
+        console.error('Error al cargar productos:', error);
+      });
+
+  const storedCart = localStorage.getItem('cart');
+  if (storedCart) {
+    this.cart = JSON.parse(storedCart);
   }
+}
+
+  agregarProducto(id: number, name: string, price: number, image: string) {
+    this.http.post("http://localhost:8000/productos", {
+      id, name, price, image
+    }).subscribe(() => {
+      // Redirige a page1 después de agregar el producto
+      this.router.navigate(['/page1']);
+    }, error => {
+      console.error('Error al agregar producto:', error);
+    });
+  }
+  
 
   navigateTo(link: string) {
     this.router.navigate([link]);

@@ -40,5 +40,29 @@
         "rol": "Administrador/a",
         "clave": "123456"
       }
+    ],
+    "productos": [
+      {
+        "id": "1",
+        "name": "Cruzadito chocolate",
+        "price": 2100,
+        "image": "assets/icon/masadulce1.jpg",
+        "category": "masas"
+      },
+      {
+        "id": "2",
+        "name": "Donuts",
+        "price": 1200,
+        "image": "assets/icon/masadulce2.jpg",
+        "category": "masas"
+      },
+      {
+        "id": "3",
+        "name": "Cinnamon roll",
+        "price": 1700,
+        "image": "assets/icon/masadulce3.webp",
+        "category": "masas"
+      }
+      
     ]
   }
