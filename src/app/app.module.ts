@@ -8,6 +8,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
     FormsModule // Agrega FormsModule aquí
   ],
   providers: [ provideHttpClient(), { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }],
