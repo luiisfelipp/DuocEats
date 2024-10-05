@@ -1,10 +1,10 @@
 {
     "usuarios": [
       {
-        "id": "macarena@harrys.cl",
-        "first_name": "Macarena",
+        "id": "harrys@harrys.cl",
+        "first_name": "Harrys",
         "last_name": "Harrys",
-        "email": "macarena@harrys.cl",
+        "email": "harrys@harrys.cl",
         "rol": "Cliente",
         "clave": "123456"
       },
