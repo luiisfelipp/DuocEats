@@ -4,13 +4,13 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyCJdr9ee3FQ4osF0od2OLSHHmmEiwECq2k",
-    authDomain: "duoceats-admin.firebaseapp.com",
-    projectId: "duoceats-admin",
-    storageBucket: "duoceats-admin.appspot.com",
-    messagingSenderId: "432990019599",
-    appId: "1:432990019599:web:742b174ed4c2f38a88437a"
+    firebaseConfig : {
+    apiKey: "AIzaSyCb36kjhUtdIVVFleQvq4Ax82wMwKCdmhE",
+    authDomain: "duoceats.firebaseapp.com",
+    projectId: "duoceats",
+    storageBucket: "duoceats.appspot.com",
+    messagingSenderId: "930650814084",
+    appId: "1:930650814084:web:9eaaa5f51b5613d563f4d1"
   }
 };
 

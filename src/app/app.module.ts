@@ -19,7 +19,7 @@ import { environment } from 'src/environments/environment';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule // Agrega FormsModule aquí
   ],
   providers: [ provideHttpClient(), { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }],
