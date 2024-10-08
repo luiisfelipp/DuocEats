@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/models/user.model';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { UtilsService } from 'src/app/services/utils.service';
+
 
 @Component({
   selector: 'app-register',
@@ -8,35 +12,42 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['register.page.scss'],
 })
 export class RegisterPage {
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
 
-  private apiUrl = 'http://localhost:5000/register'; // Asegúrate de que esta URL sea correcta
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
 
-  constructor(private http: HttpClient, private navCtrl: NavController) {}
+  firebaseSvc = inject(FirebaseService);
+  utilSvc = inject(UtilsService);
 
-  registerUser() {
-    if (this.password !== this.confirmPassword) {
-      alert('Las contraseñas no coinciden');
-      return;
-    }
-  
-    const user = {
-      email: this.email,
-      password: this.password,
-    };
-  
-    this.http.post(this.apiUrl, user).subscribe(
-      (response: any) => {
-        alert('Usuario registrado con éxito');
-        this.navCtrl.navigateRoot('/login');
-      },
-      (error) => {
-        console.error('Error al registrar usuario:', error);
-        alert('Error en el registro');
-      }
-    );
+  ngOnInit() {
+    
   }
-  
+
+  async submit(){
+    if (this.form.valid){
+
+      const loading = await this.utilSvc.loading();
+      await loading.present();
+
+      this.firebaseSvc.signIn(this.form.value as User).then(res => {
+        console.log(res);
+
+      }).catch(error => {
+        console.log(error);
+
+        this.utilSvc.presentToast({
+          message: "Usuario y/o contraseña incorrecta",
+          duration: 2500,
+          color: 'danger',
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+
+      }).finally(() => {
+        loading.dismiss();
+      })
+    }
+  }
 }
