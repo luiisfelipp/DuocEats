@@ -20,20 +20,17 @@
     }
   
     .input-item {
-      --color: black; 
-      --background: rgba(255, 255, 255, 0.702);
-      --border-radius: 8px;
-      --padding-start: 16px;
-      --padding-end: 16px;
-      width: 80%;
-      margin: auto;
-      margin-block-end: 20px;
+      --border-color: #e0e0e0;
+      --border-radius: 15px;
+      --border-style: solid;
+      --border-width: 1px;
+      margin: 20px 0;
 
 
     }
   }
   
-  .login-button, .register-button {
+  .login-button, .register-button, .inputss {
     --border-radius: 10px;
     --background: rgba(255, 255, 255, 0.859); 
     --color: #2c4375; 
