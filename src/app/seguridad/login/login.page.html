@@ -1,5 +1,3 @@
-
-
 <ion-header>
   <ion-toolbar class="header-toolbar">
     <ion-buttons slot="start">
@@ -14,21 +12,34 @@
     <img src="assets/icon/logo.png" alt="Logo Institución" routerLink="/admin" class="logo" />
   </div>
 
-  <form>
+  <!-- Corregido el formGroup -->
+  <form [formGroup]="form" >
     <!-- Usuario -->
     <ion-item class="input-item">
-      <ion-input labelPlacement="stacked" label="Usuario" placeholder="Usuario">
-        <ion-icon slot="start" name="person-outline"></ion-icon>
-      </ion-input>
-    </ion-item>
-    <!-- contraseña -->
+      <!-- Eliminado el form duplicado -->
+      <app-inputs 
+        autocomplete="email"
+        icon="mail-outline" 
+        label="Correo"
+        [control]="form.controls.email"
+        type="email">
+      </app-inputs>
+    </ion-item> 
+
+    <!-- Contraseña -->
     <ion-item class="input-item">
-      <ion-input labelPlacement="stacked" label="Contraseña" type="password" placeholder="Ingresa tu contraseña">
-        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
-      </ion-input>
+      <app-inputs 
+        icon="lock-closed-outline" 
+        label="Contraseña" 
+        type="password"
+        [control]="form.controls.password">
+      </app-inputs>
     </ion-item>
+
+    <!-- Enlace para recuperar contraseña -->
     <a routerLink="/recupera-clave" class="forgot-password-text">¿Olvidaste la contraseña?</a>
 
+    <!-- Botones de acción -->
     <ion-button expand="block" class="login-button" routerLink="/page1">Iniciar Sesión</ion-button>
     <ion-button expand="block" fill="outline" class="register-button" routerLink="/register">
       ¿Aún no tienes cuenta? Regístrate

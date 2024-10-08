@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,11 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public login!: string;
-  private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
+ 
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
 
   ngOnInit() {
-    this.login = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    
   }
 }

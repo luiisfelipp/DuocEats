@@ -14,7 +14,7 @@ export class SplashPage implements OnInit {
     // Espera 3 segundos y luego redirige a la página principal (index)
     setTimeout(() => {
       this.router.navigateByUrl('/ubicacion'); // Redirige al menú principal (index)
-    }, 3000); // 3 segundos
+    }, 2000); // 3 segundos
   }
 
 }
