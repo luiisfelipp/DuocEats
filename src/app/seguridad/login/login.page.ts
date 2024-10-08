@@ -37,9 +37,9 @@ export class LoginPage implements OnInit {
         console.log(error);
 
         this.utilSvc.presentToast({
-          message: error.message,
+          message: "Usuario y/o contraseña incorrecta",
           duration: 2500,
-          color: 'primary',
+          color: 'danger',
           position: 'middle',
           icon: 'alert-circle-outline'
         })
