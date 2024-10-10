@@ -8,6 +8,7 @@ import { MiPerfilPageRoutingModule } from './mi-perfil-routing.module';
 
 import { MiPerfilPage } from './mi-perfil.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

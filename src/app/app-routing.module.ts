@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./seguridad/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./seguridad/login/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'index',
@@ -44,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: 'recupera-clave',
-    loadChildren: () => import('./seguridad/recupera-clave/recupera-clave.module').then( m => m.RecuperaClavePageModule)
+    loadChildren: () => import('./seguridad/login/recupera-clave/recupera-clave.module').then( m => m.RecuperaClavePageModule)
   },
   {
     path: 'page4',
