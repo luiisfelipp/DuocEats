@@ -1,19 +1,70 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Panel de Administrador</ion-title>
+  <ion-toolbar>
+    <ion-segment (ionChange)="selectTab($event)">
+      <ion-segment-button value="products">Productos</ion-segment-button>
+      <ion-segment-button value="users">Usuarios</ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="admin-panel">
-  <div class="welcome-message">
-    <h1>Bienvenido, Administrador</h1>
-  </div>
+<ion-content>
+  <ng-container *ngIf="selectedTab === 'products'">
+    <form (ngSubmit)="addProduct()">
+      <ion-item>
+        <ion-label>Nombre del Producto</ion-label>
+        <ion-input [(ngModel)]="newProduct.name" name="productName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Precio</ion-label>
+        <ion-input [(ngModel)]="newProduct.price" name="productPrice" type="number" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Categoría</ion-label>
+        <ion-input [(ngModel)]="newProduct.category" name="productCategory" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>ID de Tienda</ion-label>
+        <ion-input [(ngModel)]="newProduct.storeId" name="productStoreId" required></ion-input>
+      </ion-item>
+      <ion-button type="submit">Agregar Producto</ion-button>
+      <ion-button (click)="clearProductInputs()" color="medium">Limpiar Campos</ion-button>
+      <ion-button (click)="showProducts()" color="secondary">Listar Productos</ion-button>
+    </form>
 
-  <ion-button expand="block" class="admin-button" routerLink="/crear">Agregar productos</ion-button>
-  <ion-button expand="block" class="admin-button" routerLink="/modificar">Modificar productos</ion-button>
-  <ion-button expand="block" class="admin-button" routerLink="/eliminar">Eliminar productos</ion-button>
-  <ion-button expand="block" class="admin-button" routerLink="/listar">Listar usuarios</ion-button>
+    <ion-list *ngIf="isProductListVisible">
+      <ion-item *ngFor="let product of products">
+        <ion-label>{{ product.name }} - ${{ product.price }}</ion-label>
+        <ion-button (click)="openEditProductModal(product)">Editar</ion-button>
+        <ion-button (click)="deleteProduct(product.id)">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ng-container *ngIf="selectedTab === 'users'">
+    <form (ngSubmit)="addUser()">
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input [(ngModel)]="newUser.email" name="userEmail" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Contraseña</ion-label>
+        <ion-input [(ngModel)]="newUser.password" name="userPassword" type="password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input [(ngModel)]="newUser.name" name="userName" required></ion-input>
+      </ion-item>
+      <ion-button type="submit">Agregar Usuario</ion-button>
+      <ion-button (click)="clearUserInputs()" color="medium">Limpiar Campos</ion-button>
+      <ion-button (click)="showUsers()" color="secondary">Listar Usuarios</ion-button>
+    </form>
+
+    <ion-list *ngIf="isUserListVisible">
+      <ion-item *ngFor="let user of users">
+        <ion-label>{{ user.email }}</ion-label>
+        <ion-button (click)="openEditModal(user)">Editar</ion-button>
+        <ion-button (click)="deleteUser(user.uid)">Eliminar</ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-container>
 </ion-content>

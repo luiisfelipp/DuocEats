@@ -1,0 +1,31 @@
+<!-- products-edit-modal.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="save()">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input [(ngModel)]="product.name" name="productName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Precio</ion-label>
+      <ion-input [(ngModel)]="product.price" name="productPrice" type="number" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-input [(ngModel)]="product.category" name="productCategory" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>ID de Tienda</ion-label>
+      <ion-input [(ngModel)]="product.storeId" name="productStoreId" required></ion-input>
+    </ion-item>
+    <ion-button type="submit">Guardar</ion-button>
+  </form>
+</ion-content>

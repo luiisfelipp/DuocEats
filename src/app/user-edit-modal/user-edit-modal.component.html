@@ -1,0 +1,25 @@
+<!-- user-edit-modal.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="user.email" name="email" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="user.name" name="name" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Contraseña</ion-label>
+    <ion-input [(ngModel)]="user.password" name="password" type="password" required></ion-input>
+  </ion-item>
+  <ion-button (click)="save()">Guardar</ion-button>
+</ion-content>
