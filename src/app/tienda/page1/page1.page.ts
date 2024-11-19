@@ -11,15 +11,11 @@ export class Page1Page {
   isCartVisible: boolean = false;
   searchQuery: string = '';
   cart: any[] = [];
-  products: any[] = [
-    { id: 1, name: 'Café Arábica', price: 1000, category: 'masas', image: 'cafe_arabica.jpg' },
-    { id: 2, name: 'Café Robusta', price: 1200, category: 'masas', image: 'cafe_robusta.jpg' },
-    { id: 3, name: 'Pastel de Chocolate', price: 500, category: 'liquidos', image: 'pastel_chocolate.jpg' },
-    { id: 4, name: 'Jugo Natural', price: 700, category: 'liquidos', image: 'jugo_natural.jpg' },
-    // Agrega más productos según sea necesario
-  ];
+  products: any[] = []; // Cambiado: Este array ahora será llenado desde Firebase.
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) {
+    this.getProducts(); // Llamar al método para obtener productos desde Firebase.
+  }
 
   toggleSearch() {
     this.isSearchVisible = !this.isSearchVisible;
@@ -30,8 +26,20 @@ export class Page1Page {
   }
 
   performSearch() {
-    // Lógica para realizar la búsqueda (puedes implementarla más adelante)
     console.log(`Buscando: ${this.searchQuery}`);
+    // Implementar la lógica de búsqueda (opcional).
+  }
+
+  getProducts() {
+    this.firestore.collection('products').valueChanges().subscribe(
+      (data) => {
+        this.products = data;
+        console.log('Productos cargados desde Firebase:', this.products);
+      },
+      (error) => {
+        console.error('Error al cargar productos:', error);
+      }
+    );
   }
 
   addToCart(item: any) {
@@ -40,7 +48,7 @@ export class Page1Page {
   }
 
   removeFromCart(item: any) {
-    this.cart = this.cart.filter(cartItem => cartItem.id !== item.id);
+    this.cart = this.cart.filter((cartItem) => cartItem.id !== item.id);
     console.log(`${item.name} eliminado del carrito.`);
   }
 
@@ -57,10 +65,6 @@ export class Page1Page {
     console.log('Contenido del carrito:', this.cart);
   }
 
-  filteredProducts(category: string) {
-    return this.products.filter(product => product.category === category);
-  }
-
   buy() {
     if (this.cart.length > 0) {
       const total = this.calculateTotal();
@@ -70,16 +74,22 @@ export class Page1Page {
         createdAt: new Date(),
       };
 
-      this.firestore.collection('ventas').add(saleData)
+      this.firestore
+        .collection('ventas')
+        .add(saleData)
         .then(() => {
           console.log('Venta añadida con éxito');
           this.clearCart(); // Limpia el carrito después de la compra
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error al añadir la venta: ', error);
         });
     } else {
       console.log('El carrito está vacío');
     }
+  }
+
+  filteredProducts(category: string) {
+    return this.products.filter((product) => product.category === category);
   }
 }

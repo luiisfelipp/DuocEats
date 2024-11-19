@@ -16,7 +16,7 @@ export class AdminPage {
   products: Product[] = [];
 
   newUser: User = { uid: '', email: '', password: '', name: '' };
-  newProduct: Product = { id: '', name: '', price: 0, category: '', storeId: '' };
+  newProduct: Product = { id: '', name: '', price: 0, category: '', storeId: '', imageUrl: ''};
 
   selectedTab: string = 'products';
   isProductListVisible: boolean = false; 
@@ -87,7 +87,7 @@ export class AdminPage {
   }
 
   clearProductInputs() {
-    this.newProduct = { id: '', name: '', price: 0, category: '', storeId: '' };
+    this.newProduct = { id: '', name: '', price: 0, category: '', storeId: '', imageUrl: '' };
     this.isProductListVisible = false; 
   }
 

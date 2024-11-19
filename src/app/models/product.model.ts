@@ -4,5 +4,6 @@ export interface Product {
     price: number; // Precio del producto
     category: string; // Categoría del producto
     storeId: string; // ID de la tienda a la que pertenece
+    imageUrl?: string; // URL de la imagen del producto (opcional)
   }
   
